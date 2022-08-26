@@ -1,20 +1,8 @@
-.
-5. Realizar una clase llamada Cuenta (bancaria) que debe tener como mínimo los atributos:
-numeroCuenta (entero), el DNI del cliente (entero largo) y el saldo actual (entero). Las
-operaciones asociadas a dicha clase son:
-a) Constructor por defecto y constructor con DNI, saldo, número de cuenta e interés.
-b) Agregar los métodos getters y setters correspondientes
-c) Metodo para crear un objeto Cuenta, pidiéndole los datos al usuario.
-d) Método ingresar(double ingreso): el método recibe una cantidad de dinero a ingresar
-y se la sumara a saldo actual.
-e) Método retirar(double retiro): el método recibe una cantidad de dinero a retirar y se la
-restará al saldo actual. Si la cuenta no tiene la cantidad de dinero a retirar, se pondrá el
-saldo actual en 0.
-f) Método extraccionRapida(): le permitirá sacar solo un 20% de su saldo. Validar que el
-usuario no saque más del 20%.
-g) Método consultarSaldo(): permitirá consultar el saldo disponible en la cuenta.
-h) Método consultarDatos(): permitirá mostrar todos los datos de la cuenta
 package ejercicio5_poo;
+
+import Entidades.Cuenta;
+import Servicios.ServCuenta;
+import java.util.Scanner;
 
 /**
  *
@@ -26,7 +14,81 @@ public class Ejercicio5_Poo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner leer = new Scanner(System.in);
+        Cuenta cuent = new Cuenta();
+        ServCuenta serv = new ServCuenta();
+        cuent = serv.creacCuenta(cuent);
+        int elec = 0;
+        do {   
+            
+          System.out.println("Menu:");
+          System.out.println("1- CONSULTAR SALDO");
+          System.out.println("2- EXTRACCION");
+          System.out.println("3- EXTRACCION RAPIDA");
+          System.out.println("4- CONSULTAR DATOS");
+          System.out.println("5- INGRESAR DINERO");
+          System.out.println("6-FINALIZAR");
+          elec = leer.nextInt();
+          switch (elec){
+              case 1:
+                  serv.consultarSaldo(cuent);
+                  System.out.println("¿Desea realizar otra operacion?");
+                  System.out.println("1- SI.");
+                  System.out.println("2- NO.");
+                  elec = leer.nextInt();
+                  if (elec ==2) {
+                      elec = 6;
+                  }
+                  break;
+              case 2:
+                  serv.retirar(cuent);
+                  System.out.println("¿Desea realizar otra operacion?");
+                  System.out.println("1- SI.");
+                  System.out.println("2- NO.");
+                  elec = leer.nextInt();
+                  if (elec ==2) {
+                      elec = 6;
+                  }
+                  break;
+              case 3:
+                  serv.extraccionRapida(cuent);
+                  System.out.println("¿Desea realizar otra operacion?");
+                  System.out.println("1- SI.");
+                  System.out.println("2- NO.");
+                  elec = leer.nextInt();
+                  if (elec ==2) {
+                      elec = 6;
+                  }
+                  break;
+              case 4:
+                  serv.consultarDatos(cuent);
+                  System.out.println("¿Desea realizar otra operacion?");
+                  System.out.println("1- SI.");
+                  System.out.println("2- NO.");
+                  elec = leer.nextInt();
+                  if (elec ==2) {
+                      elec = 6;
+                  }
+                  break;
+              case 5:
+                  serv.ingresar(cuent);
+                  System.out.println("¿Desea realizar otra operacion?");
+                  System.out.println("1- SI.");
+                  System.out.println("2- NO.");
+                  elec = leer.nextInt();
+                  if (elec ==2) {
+                      elec = 6;
+                  }
+                  break;
+              case 6:
+                  System.out.println("Sistema finalizado.");
+                  break;
+              default:
+                  System.out.println("La opcion ingresada es incorrecta.");
+          }
+        } while (elec !=6);
+        
+        
     }
     
 }
