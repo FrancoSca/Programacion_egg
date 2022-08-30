@@ -14,12 +14,13 @@ public class ServCafetera {
         cafe.setCapMaxima(1000);
         return cafe;
     }
-    public void llenarCafetera(Cafetera cafe){
+    public int llenarCafetera(Cafetera cafe){
         System.out.println("Llenando cafetera....");
         cafe.setCantAct(cafe.getCapMaxima());
         System.out.println("Cafetera lista !");
+        return cafe.getCantAct();
     }
-    public void servirTaza(Cafetera cafe){
+    public int servirTaza(Cafetera cafe){
         System.out.println("Ingrese el tamaño de la taza a servir: ");
         System.out.println("1- Comun (100ml)");
         System.out.println("2- Grande (200ml)");
@@ -28,7 +29,7 @@ public class ServCafetera {
         switch (elec){
             case 1:
                 if (cafe.getCantAct()>100){
-                    System.out.println("Taza llena, que disfute si café !");
+                    System.out.println("Taza llena, que disfute su café !");
                     cafe.setCantAct(cafe.getCantAct()-100);
                     System.out.println("La cantidad de cafe restante es de: " + cafe.getCantAct() +"ml");
                 } else if (cafe.getCantAct()<100){
@@ -38,7 +39,7 @@ public class ServCafetera {
                  break;
             case 2:
                 if (cafe.getCantAct()>200){
-                    System.out.println("Taza llena, que disfute si café !");
+                    System.out.println("Taza llena, que disfute su café !");
                     cafe.setCantAct(cafe.getCantAct()-200);
                     System.out.println("La cantidad de cafe restante es de: " + cafe.getCantAct() +"ml");
                 } else if (cafe.getCantAct()<200){
@@ -48,7 +49,7 @@ public class ServCafetera {
                 break;
             case 3:
                 if (cafe.getCantAct()>300){
-                    System.out.println("Taza llena, que disfute si café !");
+                    System.out.println("Taza llena, que disfute su café !");
                     cafe.setCantAct(cafe.getCantAct()-300);
                     System.out.println("La cantidad de cafe restante es de: " + cafe.getCantAct() +"ml");
                 } else if (cafe.getCantAct()<300){
@@ -60,13 +61,14 @@ public class ServCafetera {
                     System.out.println("La opcion ingresada es incorrecta.");
                     
         }
+        return cafe.getCantAct();
     }
     public void vaciarCafetera (Cafetera cafe){
         System.out.println("Vaciando la cafetera.....");
         cafe.setCantAct(0);
         System.out.println("Cafetera vaciada correctamente !");
     }
-    public void agregarCafe (Cafetera cafe){
+    public int agregarCafe (Cafetera cafe){
         System.out.println("Ingrese la cantidad de café que desea agregar: ");
         int cant = leer.nextInt();
         if ((cant + cafe.getCantAct())> cafe.getCapMaxima()) {
@@ -78,6 +80,6 @@ public class ServCafetera {
             cafe.setCantAct(cafe.getCantAct()+cant);
             System.out.println("La capacidad actual es: " + cafe.getCantAct());
         }
-        
+        return cafe.getCantAct();
     }
 }

@@ -49,7 +49,7 @@ public class ServPersona {
             System.out.println("ingrese el sexo de la persona:");        
             System.out.println("(M para masculino, F para femenino, O para otro.)");
         sexo = leer.next().toLowerCase().charAt(0);
-        if (sexo == 'm' || sexo == 'a' || sexo == 'o') {
+        if (sexo == 'm' || sexo == 'f' || sexo == 'o') {
             pers.setSexo(sexo);
         } else {
             System.out.println("La opcion ingresada es erronea.");
@@ -59,13 +59,13 @@ public class ServPersona {
         System.out.println("ingrese la altura de la persona en centimetros: ");
         pers.setAltura(leer.nextInt());
         System.out.println("Ingrese el peso de la persona: ");
-        pers.setPeso(sexo);
+        pers.setPeso(leer.nextInt());
             
         
         return pers;
     }
     
-    public void calcularImc (Persona pers){
+    public int calcularImc (Persona pers){
         double alt = pers.getAltura()/100;
         double imc = pers.getPeso()/(alt*alt);
         if (imc<20) {
@@ -75,8 +75,8 @@ public class ServPersona {
         } else {
             pers.setImc(1);
         }
+        return pers.getImc();
     }
-    /*.*/
     public boolean esMayorDeEdad(Persona pers){
         boolean esMayor = false;
         esMayor = pers.getEdad()>18;
