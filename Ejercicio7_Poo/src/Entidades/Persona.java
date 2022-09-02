@@ -40,8 +40,25 @@ public class Persona {
     private int altura;
     private double peso;
     private char sexo;
-    private int imc;
+    private double imc;
+    private int resImc;
+    private boolean esMayor;
 
+    public boolean getEsMayor() {
+        return esMayor;
+    }
+
+    public void setEsMayor(boolean esMayor) {
+        this.esMayor = esMayor;
+    }
+
+    public int getResImc() {
+        return resImc;
+    }
+
+    public void setResImc(int resImc) {
+        this.resImc = resImc;
+    }
     public Persona() {
     }
 
@@ -94,11 +111,11 @@ public class Persona {
         this.sexo = sexo;
     }
 
-    public int getImc() {
+    public double getImc() {
         return imc;
     }
 
-    public void setImc(int imc) {
+    public void setImc(double imc) {
         this.imc = imc;
     }
 
