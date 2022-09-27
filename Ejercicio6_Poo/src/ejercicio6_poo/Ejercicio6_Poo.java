@@ -16,9 +16,8 @@ public class Ejercicio6_Poo {
      */
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
-        Cafetera cafe = new Cafetera();
         ServCafetera serv = new ServCafetera();
-        cafe = serv.crearCafetera(cafe);
+        Cafetera cafe = serv.crearCafetera();
         int elec= 0;
         do {            
         System.out.println("MENU");

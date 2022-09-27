@@ -9,7 +9,8 @@ import java.util.Scanner;
  */
 public class ServCafetera {
     Scanner leer = new Scanner(System.in);
-    public Cafetera crearCafetera (Cafetera cafe){
+    public Cafetera crearCafetera (){
+        Cafetera cafe = new Cafetera();
         cafe.setCantAct(300);
         cafe.setCapMaxima(1000);
         return cafe;

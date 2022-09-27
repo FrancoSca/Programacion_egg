@@ -19,12 +19,16 @@ public class Trece {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner leer = new Scanner(System.in);
-        String[] Equipo = new String [5];
-        System.out.println("Ingrese los nombres de los participantes del equipo");
-        for (int i = 0; i < 5; i++) {
-            Equipo[i]= leer.nextLine();
+        System.out.println("  ---------------");
+        System.out.println("  |              |");
+        System.out.println("  |              O");
+        System.out.println("  |             -|- ");
+        System.out.println("  |             / \\");
+        System.out.println("  |  ");
+        System.out.println("  |  ");
+        System.out.println("  |  ");
+        System.out.println(" / \\");
         }
     }
     
-}
+
